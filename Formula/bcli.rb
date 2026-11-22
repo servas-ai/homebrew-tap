@@ -2,8 +2,12 @@
 class Bcli < Formula
   desc "Real, headed cloud browsers for agents and tests over CDP (servas.ai)"
   homepage "https://github.com/servas-ai/bcli-public"
-  version "0.14.0"
   license :cannot_represent
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   on_macos do
     on_arm do
@@ -25,11 +29,6 @@ class Bcli < Formula
       url "https://github.com/servas-ai/bcli-public/releases/download/v0.14.0/bcli-linux-amd64"
       sha256 "99aaee0f1fdf4f20b2161779e5ea08f41f27cde5e03c4d3656ff57773ca08b8a"
     end
-  end
-
-  livecheck do
-    url :stable
-    strategy :github_latest
   end
 
   def install
